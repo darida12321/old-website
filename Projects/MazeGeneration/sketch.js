@@ -1,4 +1,10 @@
 
+// TODO:
+// weights
+// UI
+// circular
+// other algorithms
+
 class Cell {
   constructor(x, y){
     this.x = x;
@@ -20,6 +26,24 @@ class Cell {
     for(let cell of this.cells){
       if(cell.visited){ continue; }
       out.push(cell);
+      if(cell.y==this.y){
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+        out.push(cell);
+      }
     }
     return out;
   }
@@ -175,12 +199,12 @@ let solver;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(60);
-  grid = new Grid(25, 25);
+  grid = new Grid(50, 50);
   solver = new RandomizedDFS(grid);
 }
 
 function draw() {
-  for(let i = 0; i < 3; i++){
+  for(let i = 0; i < 10; i++){
     solver.step();
   }
 
