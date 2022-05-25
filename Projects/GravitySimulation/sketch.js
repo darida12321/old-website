@@ -37,8 +37,9 @@ let planets = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  planets.push(new Planet(140, 100, 4, 0, 20));
-  planets.push(new Planet(200, 300, -0.9, 0, 40));
+  planets.push(new Planet(140, 100, 2.5, 0, 20));
+  planets.push(new Planet(200, 300, -0.5, 0, 40));
+  //planets.push(new Planet(140, 200, -5, 0, 4));
 }
 
 function draw() {
@@ -49,6 +50,8 @@ function draw() {
       if(other == planet){ continue; }
       planet.applyGravity(other);
     }
+  }
+  for(let planet of planets){
     planet.update();
     planet.display();
   }
