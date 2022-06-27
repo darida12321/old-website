@@ -7,7 +7,7 @@ class VerletObject {
     this.py = this.y;
     this.ax = 0;
     this.ay = 0;
-    this.r = 20
+    this.r = 10
   }
 
   applyAcc(ax, ay){
@@ -101,7 +101,7 @@ function setup() {
 function draw() {
   background(0)
   let dt = 1/60;
-  let steps = 4;
+  let steps = 8;
   for(let i = 0; i < steps; i++){
     engine.applyGravity(6000)
     engine.update(dt/steps)
